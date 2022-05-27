@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+TWITTER_USERNAME = GIVE YOUR TWITTER USERNAME
 class InternetSpeedTwitterBot:
 
     def __init__(self, driver_path):
@@ -30,7 +31,7 @@ class InternetSpeedTwitterBot:
         self.driver.find_element(by=By.NAME, value="text").send_keys(username + Keys.ENTER)
         time.sleep(10)
         if self.driver.find_element(by=By.NAME, value="text").text == "":
-            self.driver.find_element(by=By.NAME, value="text").send_keys("@tolubens" + Keys.ENTER)
+            self.driver.find_element(by=By.NAME, value="text").send_keys(TWITTER_USERNAME + Keys.ENTER)
         time.sleep(5)
         self.driver.find_element(by=By.NAME, value="password").send_keys(password + Keys.ENTER)
         time.sleep(10)
